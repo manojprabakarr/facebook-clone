@@ -8,11 +8,13 @@ import PeopleIcon from '@material-ui/icons/People';
 import ChatIcon from '@material-ui/icons/Chat';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
+import {Usestatevalue} from '../../stateprovider'
 
 function Sidebar() {
+    const [{user},dispatch]=Usestatevalue();
     return (
         <div className="sidebar">
-            <SidebarRow/>
+            <SidebarRow src={user.photoURL} title={user.displayName}/>
            
            <SidebarRow
         Icon={LocalHospitalIcon}
